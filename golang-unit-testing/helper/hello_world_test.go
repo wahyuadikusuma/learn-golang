@@ -10,24 +10,24 @@ import (
 )
 
 func TestTableHelloWorld(t *testing.T) {
-	tests := []struct{
-		name string
-		request string
+	tests := []struct {
+		name     string
+		request  string
 		expected string
 	}{
 		{
-			name: "Wahyu",
-			request: "Wahyu",
+			name:     "Wahyu",
+			request:  "Wahyu",
 			expected: "Hello Wahyu",
 		},
 		{
-			name: "Adi",
-			request: "Adi",
+			name:     "Adi",
+			request:  "Adi",
 			expected: "Hello Adi",
 		},
 		{
-			name: "Kusuma",
-			request: "Kusuma",
+			name:     "Kusuma",
+			request:  "Kusuma",
 			expected: "Hello Kusuma",
 		},
 	}
@@ -50,7 +50,7 @@ go test -run TestNamaFunction/NamaSubTest
 go test -run /NamaSubTest
 */
 
-func TestSubTest(t *testing.T)  {
+func TestSubTest(t *testing.T) {
 	t.Run("SubTestWahyu", func(t *testing.T) {
 		result := HelloWorld("Wahyu")
 		require.Equal(t, "Hello Wahyu", result, "Result must be 'Hello Wahyu'")
@@ -61,6 +61,7 @@ func TestSubTest(t *testing.T)  {
 	})
 }
 
+// before and after test
 func TestMain(m *testing.M) {
 	fmt.Println("BEFORE UNIT TEST")
 	m.Run()
@@ -73,12 +74,12 @@ func TestSkip(t *testing.T) {
 		t.Skip("Can not run on Windows")
 	}
 	result := HelloWorld("Wahyu")
-	require.Equal(t, "Hello Wahyu", result, "Result must be 'Hello Wahyu'") 
+	require.Equal(t, "Hello Wahyu", result, "Result must be 'Hello Wahyu'")
 	// Package require implements the same assertions as the `assert` package but stops test execution when a test fails.
 }
 
 // menggunakan testify (library from github)
-func TestHelloWorldAssert(t *testing.T){
+func TestHelloWorldAssert(t *testing.T) {
 	result := HelloWorld("Wahyuu")
 	assert.Equal(t, "Hello Wahyuu", result, "Result must be 'Hello Wahyuu'")
 	fmt.Println("TestHelloWorld with Assert Done")
