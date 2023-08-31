@@ -68,6 +68,7 @@ func TestMain(m *testing.M) {
 	fmt.Println("AFTER UNIT TEST")
 }
 
+// skip test (jika berada di kondisi tertentu)
 func TestSkip(t *testing.T) {
 	// kalo run di OS windows, test akan di skip
 	if runtime.GOOS == "windows" {
